@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 internal class Program
@@ -7,10 +7,10 @@ internal class Program
     {
         List<int> numbers = new List<int>();
 
-        Summarize(numbers);
+        MemorizeAndSumNumbers(numbers);
     }
 
-    static void Summarize(List<int> numbers)
+    static void MemorizeAndSumNumbers(List<int> numbers)
     {
         bool exit = false;
         int sum = 0;
@@ -68,6 +68,7 @@ internal class Program
 
             numberForReturn = number;
         }
+
         return numberForReturn;
     }
 }
