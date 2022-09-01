@@ -19,9 +19,7 @@ internal class Program
 
         while (isExit == false)
         {
-
-
-            Console.WriteLine("для продолжения нажмите enter, для сложения введите - sum, для выхода из программы - exit");
+            Console.WriteLine("для продолжения нажмите enter, для сложения введите - " + Summ + ", для выхода из программы - " + Exit);
             string userChoice = Console.ReadLine();
 
             switch (userChoice)
@@ -49,25 +47,19 @@ internal class Program
 
     static int GetNumber()
     {
-        bool isParse = false;
         int numberForReturn = 0;
 
-        while (isParse == false)
+        Console.WriteLine("Введите число: ");
+        string numberUser = Console.ReadLine();
+
+        if (int.TryParse(numberUser, out int number))
         {
-            Console.WriteLine("Введите число: ");
-            string numberUser = Console.ReadLine();
-
-            if (isParse = int.TryParse(numberUser, out int number))
-            {
-                isParse = true;
-            }
-            else
-            {
-                Console.WriteLine("Вы не корректно ввели число, попробуйте ввести число без точек, запятых, скобочек и букв");
-            }
-
             numberForReturn = number;
         }
+        else
+        {
+            Console.WriteLine("Вы не корректно ввели число, попробуйте ввести число без точек, запятых, скобочек и букв");
+        }       
 
         return numberForReturn;
     }
