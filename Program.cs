@@ -58,7 +58,7 @@ internal class Program
         }
         else
         {
-            Console.WriteLine("Вы не корректно ввели число, попробуйте ввести число без точек, запятых, скобочек и букв");
+            Console.WriteLine("Вы не корректно ввели число");
         }       
 
         return numberForReturn;
