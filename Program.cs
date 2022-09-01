@@ -19,7 +19,7 @@ internal class Program
 
         while (isExit == false)
         {
-            Console.WriteLine("для продолжения нажмите enter и введите число, которое хотите добавить, для сложения введите - " + Summ + ", для выхода из программы - " + Exit);
+            Console.WriteLine("Введите число, которое хотите добавить.   Для сложения введите - " + Summ + ", для выхода из программы - " + Exit);
             string userChoice = Console.ReadLine();
 
             switch (userChoice)
@@ -38,19 +38,18 @@ internal class Program
 
                 default:
 
-                    numbers.Add(GetNumber());
+                    numbers.Add(GetNumber(userChoice));
 
                     break;
             }
         }
     }
 
-    static int GetNumber()
+    static int GetNumber(string userChoice)
     {
         int numberForReturn = 0;
-        string numberUser = Console.ReadLine();
 
-        if (int.TryParse(numberUser, out int number))
+        if (int.TryParse(userChoice, out int number))
         {
             numberForReturn = number;
         }
