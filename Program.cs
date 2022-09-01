@@ -19,7 +19,7 @@ internal class Program
 
         while (isExit == false)
         {
-            Console.WriteLine("для продолжения нажмите enter, для сложения введите - " + Summ + ", для выхода из программы - " + Exit);
+            Console.WriteLine("для продолжения нажмите enter и введите число, которое хотите добавить, для сложения введите - " + Summ + ", для выхода из программы - " + Exit);
             string userChoice = Console.ReadLine();
 
             switch (userChoice)
@@ -48,8 +48,6 @@ internal class Program
     static int GetNumber()
     {
         int numberForReturn = 0;
-
-        Console.WriteLine("Введите число: ");
         string numberUser = Console.ReadLine();
 
         if (int.TryParse(numberUser, out int number))
