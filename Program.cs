@@ -3,35 +3,44 @@ using System.Collections.Generic;
 
 internal class Program
 {
+    const string Summ = "sum";
+    const string Exit = "exit";
+
     static void Main(string[] args)
     {
         List<int> numbers = new List<int>();
 
-        MemorizeAndSumNumbers(numbers);
+        SumEnteredNumbers(numbers);
     }
 
-    static void MemorizeAndSumNumbers(List<int> numbers)
+    static void SumEnteredNumbers(List<int> numbers)
     {
-        bool exit = false;
+        bool isExit = false;
 
-        while (exit == false)
+        while (isExit == false)
         {
-            numbers.Add(GetNumber());
+
 
             Console.WriteLine("для продолжения нажмите enter, для сложения введите - sum, для выхода из программы - exit");
             string userChoice = Console.ReadLine();
 
             switch (userChoice)
             {
-                case "sum":
+                case Summ:
 
                     Sum(numbers);
 
                     break;
 
-                case "exit":
+                case Exit:
 
-                    exit = true;
+                    isExit = true;
+
+                    break;
+
+                default:
+
+                    numbers.Add(GetNumber());
 
                     break;
             }
