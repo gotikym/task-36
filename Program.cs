@@ -3,18 +3,17 @@ using System.Collections.Generic;
 
 internal class Program
 {
-    const string Summ = "sum";
-    const string Exit = "exit";
-
     static void Main(string[] args)
     {
         List<int> numbers = new List<int>();
 
-        SumEnteredNumbers(numbers);
+        OperateEnteredNumbers(numbers);
     }
 
-    static void SumEnteredNumbers(List<int> numbers)
+    static void OperateEnteredNumbers(List<int> numbers)
     {
+        const string Summ = "sum";
+        const string Exit = "exit";
         bool isExit = false;
 
         while (isExit == false)
@@ -38,27 +37,23 @@ internal class Program
 
                 default:
 
-                    numbers.Add(GetNumber(userChoice));
+                    GetNumber(numbers, userChoice);
 
                     break;
             }
         }
     }
 
-    static int GetNumber(string userChoice)
+    static void GetNumber(List<int> numbers, string userChoice)
     {
-        int numberForReturn = 0;
-
         if (int.TryParse(userChoice, out int number))
         {
-            numberForReturn = number;
+            numbers.Add(number);
         }
         else
         {
             Console.WriteLine("Вы не корректно ввели число");
-        }       
-
-        return numberForReturn;
+        }
     }
 
     static void Sum(List<int> numbers)
