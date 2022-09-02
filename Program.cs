@@ -37,14 +37,14 @@ internal class Program
 
                 default:
 
-                    GetNumber(numbers, userChoice);
+                    AddNumber(numbers, userChoice);
 
                     break;
             }
         }
     }
 
-    static void GetNumber(List<int> numbers, string userChoice)
+    static void AddNumber(List<int> numbers, string userChoice)
     {
         if (int.TryParse(userChoice, out int number))
         {
